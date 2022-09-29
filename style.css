@@ -1,0 +1,397 @@
+/* animation */
+
+@keyframes ani-bird {
+  0% {
+    transform: translate(-20%, -40%);
+  }
+
+  50% {
+    transform: translate(-23%, -50%);
+  }
+
+  100% {
+    transform: translate(-24%, -55%);
+  }
+}
+
+
+@keyframes ani-hair {
+  from {
+    transform: rotate(10deg);
+  }
+
+  to {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes ani-wing-left {
+  from {
+    transform: rotate(-120deg);
+  }
+
+  to {
+    transform: rotate(-128deg);
+  }
+}
+
+@keyframes ani-wing-right {
+  from {
+    transform: rotate(-100deg);
+  }
+
+  to {
+    transform: rotate(-103deg);
+  }
+}
+
+@keyframes ani-wing-right-inner-one {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes ani-wing-right-inner-two {
+  from {
+    transform: rotate(20deg);
+  }
+
+  to {
+    transform: rotate(28deg);
+  }
+}
+
+@keyframes ani-tail {
+  from {
+    transform: rotate(-30deg);
+  }
+
+  to {
+    transform: rotate(-34deg);
+  }
+}
+
+@keyframes ani-clover-one {
+  from {
+    transform: rotate(130deg);
+  }
+
+  to {
+    transform: rotate(140deg);
+  }
+}
+
+@keyframes ani-clover-two {
+  from {
+    transform: rotate(240deg);
+  }
+
+  to {
+    transform: rotate(250deg);
+  }
+}
+
+
+
+/* setting */
+:root {
+  --main: #fffde7;
+  --shadow: #c6c8b5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d3f2ff;
+}
+
+.bird {
+  width: 380px;
+  height: 380px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: ani-bird 2s infinite alternate;
+}
+
+.bird-face {
+  background: var(--main);
+  width: 105px;
+  height: 110px;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  border-radius: 40% 50% 20% 48%;
+  transform: rotate(10deg);
+  z-index: 99;
+  box-shadow: 0px 0px 20px -1px #fff;
+}
+
+.hair.one {
+  width: 70px;
+  height: 60px;
+  position: absolute;
+  left: -18px;
+  top: -40px;
+  border-radius: 50%;
+  box-shadow: 10px 15px 0 0 #fffde7;
+  transform: rotate(10deg);
+  animation: ani-hair 1s infinite alternate 0.2s;
+}
+
+.hair.two {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 5px;
+  top: -20px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 0 0 #fffde7;
+  transform: rotate(55deg);
+}
+
+.eye {
+  background-color: #98604e;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.eye.left {
+  width: 6px;
+  height: 9px;
+  left: 1px;
+  top: 52px;
+}
+
+.eye.right {
+  width: 7px;
+  height: 10px;
+  right: 70px;
+  top: 50px;
+}
+
+.beak {
+  position: absolute;
+  left: 0px;
+  top: 72px;
+  width: 15px;
+  height: 15px;
+  background-color: #ffdf74;
+  transform: rotate(110deg) skewX(20deg);
+  z-index: 22;
+  box-shadow: 0px 0px 10px 1px #ffe48b;
+}
+
+.clover {
+  background-color: #049225;
+  width: 2px;
+  height: 65px;
+  position: absolute;
+  left: 0px;
+  top: 50px;
+  transform: rotate(90deg);
+}
+
+.leaf {
+  background-color: #049225;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  transform: rotate(45deg);
+  box-shadow: 0px 0px 20px #97eeac;
+}
+.leaf::before,
+.leaf::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #049225;
+}
+
+.leaf::before {
+  left: -50%;
+}
+
+.leaf::after {
+  top: -50%;
+}
+
+.leaf.one {
+  background-color: #00701a;
+  left: 0px;
+  top: 52px;
+  transform: rotate(130deg);
+  box-shadow: 0px 0px 0px #97eeac;
+  animation: ani-clover-one 1s infinite alternate 0.2s;
+}
+
+.leaf.two {
+  background-color: #00701a;
+  left: -10px;
+  top: 48px;
+  transform: rotate(240deg);
+  box-shadow: 0px 0px 10px #97eeac;
+  animation: ani-clover-two 1s infinite alternate 0.2s;
+}
+
+.leaf.three {
+  background-color: #00701a;
+  left: -16px;
+  top: 17px;
+  transform: rotate(348deg);
+  box-shadow: 0px 0px 10px #97eeac;
+  z-index: 1;
+}
+
+
+/* z-index: 10~19 */
+.bird-body {
+  background: var(--main);
+  width: 130px;
+  height: 180px;
+  position: absolute;
+  left: 70px;
+  top: 85px;
+  transform: rotate(-15deg);
+  border-radius: 0px 250px 20px / 20px 200px 100px;      
+  z-index: 77;
+  box-shadow: 0px 0px 20px #fff;
+}
+
+.cover {
+  background-color: #fffde792;
+  z-index: 88;
+}
+
+.feather.one {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: -5px;
+  top: 45px;
+  border-radius: 50%;
+  box-shadow: 5px 10px 0 0 #fffde7;
+  transform: rotate(170deg);
+}
+
+.feather.two {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: -23px;
+  top: 42px;
+  border-radius: 50%;
+  box-shadow: 3px 10px 0 0 #fffde7;
+  transform: rotate(220deg);
+}
+
+
+/* z-index:  */
+.wing {
+  width: 100px;
+  height: 180px;
+  position: absolute;
+  border-radius: 10px 150px / 0px 200px 50px;
+  /* box-shadow: 0px 0px 10px #fff; */
+  z-index: 99;
+}
+
+.wing.left {
+  background-color: #eceed5;
+  left: 80px;
+  top: -140px;
+  transform: rotate(-120deg);
+  z-index: 11;
+  box-shadow: 0px 0px 10px #fff;
+  animation: ani-wing-left 1s infinite alternate 0.2s;
+}
+
+.wing.left .inner {
+  background-color: #edefdb;
+  left: 0px;
+  top: 30px;
+  width: 80px;
+  height: 150px;
+  transform: rotate(20deg);
+  box-shadow: 0px 0px 20px #dcdfc9;
+}
+
+.wing.right {
+  background: var(--main);
+  width: 110px;
+  height: 250px;
+  left: 110px;
+  top: -140px;
+  transform: rotate(-100deg);
+  z-index: 100;
+  box-shadow: 0px 0px 15px #fff;
+  animation: ani-wing-right 1s infinite alternate;
+}
+
+.wing.right .inner.one {
+  background: var(--main);
+  width: 90px;
+  height: 220px;
+  left: -20px;
+  top: 30px;
+  transform: rotate(10deg);
+  border-radius: 0px 150px 20px / 0px 200px 50px;
+  box-shadow: 0px 0px 20px #fff;
+  animation: ani-wing-right-inner-one 1s infinite alternate 0.1s;
+}
+
+.wing.right .inner.two {
+  background-color: #fffde7;
+  left: -60px;
+  top: 40px;
+  width: 85px;
+  height: 180px;
+  transform: rotate(30deg);
+  border-radius: 0px 150px 20px / 0px 200px 50px;
+  box-shadow: 0px 0px 20px #fff;
+  animation: ani-wing-right-inner-two 1s infinite alternate 0.1s;
+}
+
+.wing.right .inner.three {
+  background: var(--main);
+  left: -80px;
+  top: 0;
+  width: 60px;
+  height: 180px;
+  transform: rotate(20deg);
+  box-shadow: 0px 0px 20px #fff;
+}
+
+.wing.right .inner.four {
+  background: var(--main);
+  left: -80px;
+  top: -40px;
+  width: 60px;
+  height: 180px;
+  transform: rotate(40deg);
+  box-shadow: 0px 0px 20px #fff;
+}
+
+.tail {
+  background: var(--main);
+  width: 65px;
+  height: 100px;
+  position: absolute;
+  right: -40px;
+  bottom: -60px;
+  border-radius: 0% 100% 63% 37% / 0% 88% 12% 100%;
+  transform: rotate(-30deg);
+  box-shadow: 0px 0px 20px #fff;
+  animation: ani-tail 1s infinite alternate 0.2s;
+}
